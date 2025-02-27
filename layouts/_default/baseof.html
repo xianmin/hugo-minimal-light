@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    {{ if .Site.Params.favicon }}
+    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon | relURL }}">
+    {{ end }}
+    {{ if .Site.Params.favicon_dark }}
+    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_dark | relURL }}" media="(prefers-color-scheme: dark)">
+    {{ end }}
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="keywords" content="{{ .Site.Params.keywords }}">
+    {{ if .Site.Params.canonical }}<link rel="canonical" href="{{ .Site.Params.canonical }}">{{ end }}
+    {{ $style := resources.Get "css/style.scss" | resources.ToCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            {{ partial "header.html" . }}
+        </header>
+        <section>
+            {{ block "main" . }}{{ end }}
+        </section>
+        <footer>
+            {{ partial "footer.html" . }}
+        </footer>
+    </div>
+</body>
+</html>

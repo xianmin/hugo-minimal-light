@@ -1,0 +1,17 @@
+name = "Minimal Light"
+license = "Creative Commons Zero v1.0 Universal"
+licenselink = "https://github.com/yaoyao-liu/minimal-light/blob/master/LICENSE"
+description = "A simple and elegant hugo theme for academic personal homepage"
+homepage = "https://github.com/your-username/minimal-light-hugo"
+tags = ["blog", "personal", "academic", "clean", "responsive"]
+features = ["blog", "responsive", "dark mode"]
+min_version = "0.41.0"
+
+[author]
+  name = "Your Name"
+  homepage = "https://your-website.com"
+
+[original]
+  name = "Yaoyao Liu"
+  homepage = "https://github.com/yaoyao-liu"
+  repo = "https://github.com/yaoyao-liu/minimal-light"

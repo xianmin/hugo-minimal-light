@@ -1,0 +1,69 @@
+<h2 id="publications" style="margin: 2px 0px -15px">Publications</h2>
+
+<div class="publications">
+  <ol class="bibliography">
+    {{ range .Site.Data.publications.main }}
+    <li>
+      <div class="pub-row">
+        <div
+          class="col-sm-3 abbr"
+          style="position: relative; padding-right: 15px; padding-left: 15px"
+        >
+          {{ with .image }}
+          <img src="{{ . }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
+          {{ end }} {{ with .conference_short }}
+          <abbr class="badge">{{ . }}</abbr>
+          {{ end }}
+        </div>
+        <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px">
+          <div class="title"><a href="{{ .pdf }}">{{ .title }}</a></div>
+          <div class="author">{{ .authors }}</div>
+          <div class="periodical"><em>{{ .conference }}</em></div>
+          <div class="links">
+            {{ with .pdf }}
+            <a
+              href="{{ . }}"
+              class="btn btn-sm z-depth-0"
+              role="button"
+              target="_blank"
+              style="font-size: 12px"
+              >PDF</a
+            >
+            {{ end }} {{ with .code }}
+            <a
+              href="{{ . }}"
+              class="btn btn-sm z-depth-0"
+              role="button"
+              target="_blank"
+              style="font-size: 12px"
+              >Code</a
+            >
+            {{ end }} {{ with .page }}
+            <a
+              href="{{ . }}"
+              class="btn btn-sm z-depth-0"
+              role="button"
+              target="_blank"
+              style="font-size: 12px"
+              >Project Page</a
+            >
+            {{ end }} {{ with .bibtex }}
+            <a
+              href="{{ . }}"
+              class="btn btn-sm z-depth-0"
+              role="button"
+              target="_blank"
+              style="font-size: 12px"
+              >BibTex</a
+            >
+            {{ end }} {{ with .notes }}
+            <strong><i style="color: #e74d3c">{{ . }}</i></strong>
+            {{ end }} {{ with .others }} {{ . | safeHTML }} {{ end }}
+          </div>
+        </div>
+      </div>
+    </li>
+    <br />
+    {{ end }}
+  </ol>
+</div>

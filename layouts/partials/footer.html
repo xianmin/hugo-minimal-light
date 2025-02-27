@@ -1,0 +1,16 @@
+{{ if .Site.Params.enable_footnote | default true }}
+<p>
+    <small>Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> and
+    <a href="https://github.com/your-username/minimal-light-hugo" target="_blank">Minimal Light</a> theme.</small>
+</p>
+{{ end }}
+
+{{ with .Site.Params.google_analytics }}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ . }}');
+</script>
+{{ end }}

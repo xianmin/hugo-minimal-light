@@ -1,0 +1,18 @@
+main:
+  - title: "Paper Title 1"
+    authors: "Author 1, Your Name, Author 3"
+    conference: "Conference Name 2024"
+    conference_short: "CONF24"
+    image: "/images/publication_1.jpg"
+    pdf: "https://arxiv.org/pdf/xxxx.xxxxx.pdf"
+    code: "https://github.com/xxxx/xxxx"
+    page: "https://project-page.com"
+    bibtex: "/bibtex/paper1.txt"
+    notes: "Best Paper Award"
+
+  - title: "Paper Title 2"
+    authors: "Your Name, Author 2"
+    conference: "Journal Name 2023"
+    conference_short: "JOUR23"
+    image: "/images/publication_2.jpg"
+    pdf: "https://arxiv.org/pdf/xxxx.xxxxx.pdf"
