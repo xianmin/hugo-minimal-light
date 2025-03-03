@@ -1,6 +1,6 @@
 {{ if .Site.Params.avatar }}
-<div class="profile">
-    <img src="{{ .Site.Params.avatar | relURL }}" alt="profile picture" />
+<div class="image avatar">
+  <img src="{{ .Site.Params.avatar | relURL }}" alt="profile picture" />
 </div>
 {{ end }}
 
@@ -8,34 +8,24 @@
 
 {{ with .Site.Params.position }}
 <p>{{ . }}</p>
-{{ end }}
-
-{{ with .Site.Params.affiliation }}
+{{ end }} {{ with .Site.Params.affiliation }}
 <p>{{ . }}</p>
 {{ end }}
 
-<div class="social-links">
-    {{ with .Site.Params.email }}
-    <a href="mailto:{{ . }}" class="email"><i class="fas fa-envelope"></i></a>
-    {{ end }}
-
-    {{ with .Site.Params.google_scholar }}
-    <a href="{{ . }}" target="_blank"><i class="ai ai-google-scholar"></i></a>
-    {{ end }}
-
-    {{ with .Site.Params.github_link }}
-    <a href="{{ . }}" target="_blank"><i class="fab fa-github"></i></a>
-    {{ end }}
-
-    {{ with .Site.Params.linkedin }}
-    <a href="{{ . }}" target="_blank"><i class="fab fa-linkedin"></i></a>
-    {{ end }}
-
-    {{ with .Site.Params.twitter }}
-    <a href="{{ . }}" target="_blank"><i class="fab fa-twitter"></i></a>
-    {{ end }}
-
-    {{ with .Site.Params.cv_link }}
-    <a href="{{ . }}" target="_blank">CV</a>
-    {{ end }}
+<div class="social-icons">
+  {{ with .Site.Params.email }}
+  <a href="mailto:{{ . }}" class="email"><i class="fas fa-envelope"></i></a>
+  {{ end }} {{ with .Site.Params.google_scholar }}
+  <a href="{{ . }}" target="_blank">
+    <i class="ai ai-google-scholar" style="font-size: 1.2rem"></i
+  ></a>
+  {{ end }} {{ with .Site.Params.github_link }}
+  <a href="{{ . }}" target="_blank"><i class="fab fa-github"></i></a>
+  {{ end }} {{ with .Site.Params.linkedin }}
+  <a href="{{ . }}" target="_blank"><i class="fab fa-linkedin"></i></a>
+  {{ end }} {{ with .Site.Params.twitter }}
+  <a href="{{ . }}" target="_blank"><i class="fab fa-twitter"></i></a>
+  {{ end }} {{ with .Site.Params.cv_link }}
+  <a href="{{ . }}" target="_blank">CV</a>
+  {{ end }}
 </div>
