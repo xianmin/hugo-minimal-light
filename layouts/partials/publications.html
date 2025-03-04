@@ -11,14 +11,14 @@
         >
           {{ with .image }}
           <img src="{{ . }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%" />
-          {{ end }} {{ with .conference_short }}
+          {{ end }} {{ with .conference_short | markdownify }}
           <abbr class="badge">{{ . }}</abbr>
           {{ end }}
         </div>
         <div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px">
-          <div class="title"><a href="{{ .pdf }}">{{ .title }}</a></div>
-          <div class="author">{{ .authors }}</div>
-          <div class="periodical"><em>{{ .conference }}</em></div>
+          <div class="title"><a href="{{ .pdf }}">{{ .title | markdownify }}</a></div>
+          <div class="author">{{ .authors | markdownify }}</div>
+          <div class="periodical"><em>{{ .conference | markdownify }}</em></div>
           <div class="links">
             {{ with .pdf }}
             <a
